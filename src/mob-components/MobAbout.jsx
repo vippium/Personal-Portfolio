@@ -4,7 +4,7 @@ import { UserRound } from "lucide-react";
 
 const MobAbout = () => {
   return (
-    <section id="about" className="px-6 py-10">
+    <section id="m-about" className="px-6 py-10">
       {/* Title + Icon animated on scroll into view */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}

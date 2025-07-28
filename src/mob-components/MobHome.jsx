@@ -6,7 +6,10 @@ import ProfileImage from "../assets/image.png";
 const MobHome = () => {
   return (
     // Section: Mobile Home
-    <section className="flex flex-col items-center text-center px-6 md:hidden">
+    <section
+      id="m-home"
+      className="flex flex-col items-center text-center px-6 md:hidden"
+    >
       <div className="w-40 h-40 rounded-full overflow-hidden mb-6 shadow-lg">
         <img
           src={ProfileImage}

@@ -74,7 +74,7 @@ const MobContactSection = () => {
 
   return (
     <section
-      id="contact"
+      id="m-contact"
       className="px-4 py-12 flex flex-col items-center justify-center"
     >
       {/* Section Title */}

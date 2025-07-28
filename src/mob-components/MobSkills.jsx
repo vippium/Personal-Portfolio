@@ -85,7 +85,7 @@ const MobSkills = () => {
 
   return (
     <section
-      id="skills"
+      id="m-skills"
       className="px-6 py-16 flex flex-col items-center md:hidden"
     >
       <motion.div

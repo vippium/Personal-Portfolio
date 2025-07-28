@@ -51,7 +51,7 @@ const headingVariant = {
 const ProjectsSection = () => {
   return (
     <section
-      id="projects"
+      id="m-projects"
       className="min-h-screen px-6 md:px-20 py-20 flex flex-col items-center justify-center relative"
     >
       {/* Section Heading */}

@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { EllipsisVertical, X } from "lucide-react";
 import { Link } from "react-scroll";
 import GlassCard from "../components/GlassCard";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navItems = ["home", "about", "skills", "projects", "contact"];
+const navItems = [
+  { id: "m-home", label: "Home" },
+  { id: "m-about", label: "About" },
+  { id: "m-skills", label: "Skills" },
+  { id: "m-projects", label: "Projects" },
+  { id: "m-contact", label: "Contact" },
+];
 
 const MobNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,10 +48,10 @@ const MobNavbar = () => {
             className="fixed top-20 left-0 right-0 mx-auto z-40 px-6"
           >
             <GlassCard className="flex flex-col items-center py-6 rounded-3xl shadow-md backdrop-blur-xl bg-white/10 border border-white/20 w-full max-w-[85%] mx-auto">
-              {navItems.map((item) => (
+              {navItems.map(({ id, label }) => (
                 <Link
-                  key={item}
-                  to={item}
+                  key={id}
+                  to={id}
                   smooth={true}
                   spy={true}
                   offset={-100}
@@ -53,7 +59,7 @@ const MobNavbar = () => {
                   onClick={() => setIsOpen(false)}
                   className="text-white text-lg font-medium py-2 w-full text-center hover:text-blue-400 transition-colors cursor-pointer"
                 >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                  {label}
                 </Link>
               ))}
             </GlassCard>

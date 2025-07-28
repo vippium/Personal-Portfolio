@@ -1,5 +1,3 @@
-import React from "react";
-
 // Desktop Components
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -12,7 +10,7 @@ import Footer from "./components/Footer";
 // Mobile Components
 import MobNavbar from "./mob-components/MobNavbar";
 import MobHome from "./mob-components/MobHome";
-import MobAbout from "./mob-components/MobAbout"; // (you’ve already made this)
+import MobAbout from "./mob-components/MobAbout";
 import MobSkills from "./mob-components/MobSkills";
 import MobProjects from "./mob-components/MobProjects";
 import MobContact from "./mob-components/MobContact";

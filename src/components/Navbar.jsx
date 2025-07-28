@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import GlassCard from "./GlassCard";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
