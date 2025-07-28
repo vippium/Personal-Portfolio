@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { EllipsisVertical, X } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import { Link } from "react-scroll";
 import GlassCard from "../components/GlassCard";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { id: "m-home", label: "Home" },
-  { id: "m-about", label: "About" },
-  { id: "m-skills", label: "Skills" },
-  { id: "m-projects", label: "Projects" },
-  { id: "m-contact", label: "Contact" },
+  { id: "m-home", label: "Home", offset: -250 },
+  { id: "m-about", label: "About", offset: -70 },
+  { id: "m-skills", label: "Skills", offset: -70 },
+  { id: "m-projects", label: "Projects", offset: -20 },
+  { id: "m-contact", label: "Contact", offset: -100 },
 ];
 
 const MobNavbar = () => {
@@ -27,13 +27,24 @@ const MobNavbar = () => {
             <span className="text-blue-400 animate-blink">_</span>
           </div>
 
-          {/* Toggle Button  */}
-          <button
+          {/* Animated Toggle Button */}
+          <motion.button
             onClick={() => setIsOpen(!isOpen)}
             className="absolute right-5 text-white focus:outline-none"
+            initial={false}
+            animate={{ rotate: isOpen ? 90 : 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           >
-            {isOpen ? <X size={23} /> : <EllipsisVertical size={23} />}
-          </button>
+            <motion.div
+              key={isOpen ? "x" : "chevron"}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+            >
+              {isOpen ? <X size={20} /> : <ChevronDown size={20} />}
+            </motion.div>
+          </motion.button>
         </GlassCard>
       </nav>
 
@@ -41,28 +52,46 @@ const MobNavbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-20 left-0 right-0 mx-auto z-40 px-6"
+            initial={{
+              opacity: 0,
+              y: -20,
+              backdropFilter: "blur(20px)",
+              backgroundColor: "rgba(255, 255, 255, 0.06)",
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              backdropFilter: "blur(20px)",
+              backgroundColor: "rgba(255, 255, 255, 0.06)",
+            }}
+            exit={{
+              opacity: 0,
+              y: -20,
+              backdropFilter: "blur(0px)",
+              backgroundColor: "rgba(255,255,255,0)",
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="fixed top-20 left-0 right-0 mx-auto z-40 px-6 w-full max-w-[75%] rounded-3xl shadow-md border border-white/20 flex flex-col items-center py-6"
+            style={{
+              WebkitBackdropFilter: "blur(16px)",
+              backdropFilter: "blur(20px)",
+              backgroundColor: "rgba(255, 255, 255, 0.06)",
+            }}
           >
-            <GlassCard className="flex flex-col items-center py-6 rounded-3xl shadow-md backdrop-blur-xl bg-white/10 border border-white/20 w-full max-w-[85%] mx-auto">
-              {navItems.map(({ id, label }) => (
-                <Link
-                  key={id}
-                  to={id}
-                  smooth={true}
-                  spy={true}
-                  offset={-100}
-                  duration={500}
-                  onClick={() => setIsOpen(false)}
-                  className="text-white text-lg font-medium py-2 w-full text-center hover:text-blue-400 transition-colors cursor-pointer"
-                >
-                  {label}
-                </Link>
-              ))}
-            </GlassCard>
+            {navItems.map(({ id, label, offset }) => (
+              <Link
+                key={id}
+                to={id}
+                smooth={true}
+                spy={true}
+                offset={offset}
+                duration={500}
+                onClick={() => setIsOpen(false)}
+                className="text-white text-lg font-medium py-2 w-full text-center hover:text-blue-400 transition-colors cursor-pointer"
+              >
+                {label}
+              </Link>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
