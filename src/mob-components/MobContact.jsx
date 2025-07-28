@@ -86,7 +86,7 @@ const MobContactSection = () => {
         className="flex items-center gap-3 mb-8"
       >
         <SendHorizontal className="text-emerald-400 w-6 h-6" />
-        <h2 className="text-3xl font-bold text-white">Let's Connect</h2>
+        <h2 className="text-3xl font-bold text-white">Get in Touch</h2>
       </motion.div>
 
       {/* Form Card */}
