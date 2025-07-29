@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 // Desktop Components
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -15,60 +17,74 @@ import MobSkills from "./mob-components/MobSkills";
 import MobProjects from "./mob-components/MobProjects";
 import MobContact from "./mob-components/MobContact";
 
+// Layout and Loader
+import Layout from "./components/Layout";
+import Loader from "./components/Loader";
+
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setLoading(false), 1725); // Adjust if needed
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
-    <div className="relative min-h-screen font-sans bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
-      {/* --------- NAVBAR --------- */}
-      <div className="hidden md:block">
-        <Navbar />
-      </div>
-      <div className="block md:hidden">
-        <MobNavbar />
-      </div>
+    <Layout>
+      {loading && <Loader />}
 
-      <main className="relative z-10 pt-32 space-y-20">
-        {/* --------- HOME SECTION --------- */}
-        <div className="hidden md:block">
-          <Home />
-        </div>
-        <div className="block md:hidden">
-          <MobHome />
-        </div>
+      {!loading && (
+        <>
+          {/* NAVBAR */}
+          <div className="hidden md:block">
+            <Navbar />
+          </div>
+          <div className="block md:hidden">
+            <MobNavbar />
+          </div>
 
-        {/* --------- ABOUT SECTION --------- */}
-        <div className="hidden md:block">
-          <About />
-        </div>
-        <div className="block md:hidden">
-          <MobAbout />
-        </div>
+          {/* MAIN CONTENT */}
+          <main className="relative z-10 pt-32 space-y-20">
+            <div className="hidden md:block">
+              <Home />
+            </div>
+            <div className="block md:hidden">
+              <MobHome />
+            </div>
 
-        {/* --------- SKILLS SECTION --------- */}
-        <div className="hidden md:block">
-          <Skills />
-        </div>
-        <div className="block md:hidden">
-          <MobSkills />
-        </div>
+            <div className="hidden md:block">
+              <About />
+            </div>
+            <div className="block md:hidden">
+              <MobAbout />
+            </div>
 
-        {/* --------- PROJECTS SECTION --------- */}
-        <div className="hidden md:block">
-          <Projects />
-        </div>
-        <div className="block md:hidden">
-          <MobProjects />
-        </div>
+            <div className="hidden md:block">
+              <Skills />
+            </div>
+            <div className="block md:hidden">
+              <MobSkills />
+            </div>
 
-        {/* --------- CONTACT SECTION --------- */}
-        <div className="hidden md:block">
-          <Contact />
-        </div>
-        <div className="block md:hidden">
-          <MobContact />
-        </div>
-      </main>
-      <Footer />
-    </div>
+            <div className="hidden md:block">
+              <Projects />
+            </div>
+            <div className="block md:hidden">
+              <MobProjects />
+            </div>
+
+            <div className="hidden md:block">
+              <Contact />
+            </div>
+            <div className="block md:hidden">
+              <MobContact />
+            </div>
+          </main>
+
+          <Footer />
+        </>
+      )}
+    </Layout>
   );
 };
 
