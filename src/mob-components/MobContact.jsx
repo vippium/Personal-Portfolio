@@ -85,8 +85,8 @@ const MobContactSection = () => {
         viewport={{ once: true }}
         className="flex items-center gap-3 mb-8"
       >
-        <SendHorizontal className="text-emerald-400 w-6 h-6" />
-        <h2 className="text-3xl font-bold text-white">Get in Touch</h2>
+        <SendHorizontal className="text-emerald-400 w-10 h-10" />
+        <h2 className="text-4xl font-bold text-white">Get in Touch</h2>
       </motion.div>
 
       {/* Form Card */}
@@ -97,7 +97,7 @@ const MobContactSection = () => {
         transition={{ duration: 0.7 }}
         className="w-full max-w-sm"
       >
-        <GlassCard className="p-8 mx-2 bg-white/5 hover:bg-white/10 backdrop-blur rounded-3xl transition-all duration-300 shadow-md">
+        <GlassCard className="p-8 mx-2 bg-white/5 backdrop-blur rounded-3xl transition-all shadow-md border border-white/20">
           {submitted ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -125,39 +125,39 @@ const MobContactSection = () => {
               className="flex flex-col gap-4 w-full"
             >
               <div className="relative">
-                <User className="absolute left-3 top-2.5 text-white/40 w-5 h-5" />
+                <User className="absolute left-3 top-2.5 text-white/50 w-5 h-5" />
                 <input
                   type="text"
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="w-full pl-10 pr-3 py-1.5 rounded-full bg-white/5 text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400/50 placeholder-white/30"
+                  className="w-full pl-10 pr-3 py-1.5 rounded-full bg-white/5 text-white border border-white/15 focus:outline-none focus:ring-2 focus:ring-sky-400/50 placeholder-white/50"
                   value={formData.name}
                   onChange={handleChange}
                 />
               </div>
 
               <div className="relative">
-                <Mail className="absolute left-3 top-2.5 text-white/40 w-5 h-5" />
+                <Mail className="absolute left-3 top-2.5 text-white/50 w-5 h-5" />
                 <input
                   type="email"
                   name="email"
                   placeholder="Your Email"
                   required
-                  className="w-full pl-10 pr-3 py-1.5 rounded-full bg-white/5 text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400/50 placeholder-white/30"
+                  className="w-full pl-10 pr-3 py-1.5 rounded-full bg-white/5 text-white border border-white/15 focus:outline-none focus:ring-2 focus:ring-sky-400/50 placeholder-white/50"
                   value={formData.email}
                   onChange={handleChange}
                 />
               </div>
 
               <div className="relative">
-                <MessageCircle className="absolute left-3 top-3.5 text-white/40 w-5 h-5" />
+                <MessageCircle className="absolute left-3 top-3.5 text-white/50 w-5 h-5" />
                 <textarea
                   name="message"
                   placeholder="Your Message"
                   required
                   rows={4}
-                  className="w-full pl-10 pr-3 py-2.5 rounded-2xl bg-white/5 text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400/50 placeholder-white/30 resize-none"
+                  className="w-full pl-10 pr-3 py-2.5 rounded-2xl bg-white/5 text-white border border-white/15 focus:outline-none focus:ring-2 focus:ring-sky-400/50 placeholder-white/50 resize-none"
                   value={formData.message}
                   onChange={handleChange}
                 />
@@ -167,10 +167,10 @@ const MobContactSection = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-40 flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                  className={`w-28 flex items-center justify-center gap-2 px-4 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
                     isSubmitting
                       ? "bg-sky-700 cursor-not-allowed"
-                      : "bg-sky-500 hover:bg-sky-600"
+                      : "bg-sky-900"
                   } text-white`}
                 >
                   {isSubmitting ? (
@@ -180,8 +180,8 @@ const MobContactSection = () => {
                     </>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" />
-                      Send Message
+                      <Send className="w-5 h-5" />
+                      Send
                     </>
                   )}
                 </button>

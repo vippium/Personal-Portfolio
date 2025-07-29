@@ -8,8 +8,8 @@ const navItems = [
   { id: "m-home", label: "Home", offset: -250 },
   { id: "m-about", label: "About", offset: -70 },
   { id: "m-skills", label: "Skills", offset: -70 },
-  { id: "m-projects", label: "Projects", offset: -20 },
-  { id: "m-contact", label: "Contact", offset: -100 },
+  { id: "m-projects", label: "Projects", offset: -120 },
+  { id: "m-contact", label: "Contact", offset: -10 },
 ];
 
 const MobNavbar = () => {
@@ -17,11 +17,19 @@ const MobNavbar = () => {
 
   return (
     <>
-      {/* Navbar Container */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[85%]">
-        <GlassCard className="relative flex items-center justify-center px-6 py-2.5 rounded-full shadow-md backdrop-blur-lg bg-white/10 border border-white/20">
+      {/* Animated Navbar Container */}
+      <motion.nav
+        className="fixed top-5 inset-x-0 z-50 w-[85%] max-w-[320px] mx-auto px-4"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.4,
+          ease: "easeOut", // Adjust this to match your MobHome timing
+        }}
+      >
+        <GlassCard className="relative flex items-center justify-center px-6 py-4 rounded-full shadow-md backdrop-blur-lg bg-white/5 border border-white/15">
           {/* Centered Logo */}
-          <div className="text-2xl font-bold tracking-wide text-white flex items-center gap-1">
+          <div className="text-4xl font-bold tracking-wide text-white flex items-center gap-1">
             <span className="text-blue-400">vip</span>
             <span>folio</span>
             <span className="text-blue-400 animate-blink">_</span>
@@ -42,11 +50,11 @@ const MobNavbar = () => {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.3 }}
             >
-              {isOpen ? <X size={20} /> : <ChevronDown size={20} />}
+              {isOpen ? <X size={22} /> : <ChevronDown size={22} />}
             </motion.div>
           </motion.button>
         </GlassCard>
-      </nav>
+      </motion.nav>
 
       {/* Dropdown Menu */}
       <AnimatePresence>
@@ -71,7 +79,7 @@ const MobNavbar = () => {
               backgroundColor: "rgba(255,255,255,0)",
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed top-20 left-0 right-0 mx-auto z-40 px-6 w-full max-w-[75%] rounded-3xl shadow-md border border-white/20 flex flex-col items-center py-6"
+            className="fixed top-28 left-0 right-0 mx-auto z-40 px-6 w-full max-w-[75%] rounded-3xl shadow-md border border-white/15 flex flex-col items-center py-4"
             style={{
               WebkitBackdropFilter: "blur(16px)",
               backdropFilter: "blur(20px)",

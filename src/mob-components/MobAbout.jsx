@@ -4,8 +4,8 @@ import { UserRound } from "lucide-react";
 
 const MobAbout = () => {
   return (
-    <section id="m-about" className="px-6 py-10">
-      {/* Title + Icon animated on scroll into view */}
+    <section id="m-about" className="px-6 py-36">
+      {/* Title + Icon */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -13,17 +13,17 @@ const MobAbout = () => {
         viewport={{ once: true, amount: 0.6 }}
         className="flex items-center justify-center gap-3 mb-6"
       >
-        <UserRound className="text-blue-400 w-7 h-7" />
-        <h2 className="text-2xl font-bold text-white">About Me</h2>
+        <UserRound className="text-blue-400 w-10 h-10" />
+        <h2 className="text-4xl font-bold text-white">About Me</h2>
       </motion.div>
 
-      {/* Paragraph content animated separately on scroll */}
+      {/* Paragraph with Aminmation */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.1 }}
         viewport={{ once: true, amount: 0.5 }}
-        className="text-white text-[13.5px] leading-relaxed bg-white/5 border border-white/10 rounded-3xl p-5 shadow-md text-center"
+        className="text-white text-[16.5px] leading-relaxed bg-white/5 border border-white/15 rounded-3xl p-5 shadow-md text-center"
       >
         I’m a{" "}
         <span className="text-blue-400 font-semibold">Frontend Developer</span>{" "}

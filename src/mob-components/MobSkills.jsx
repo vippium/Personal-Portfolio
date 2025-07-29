@@ -42,7 +42,7 @@ const MobSkills = () => {
     {
       title: "Workflow Essentials",
       icon: <BrainCog className="w-8 h-8 text-white" />,
-      gridCols: 4,
+      gridCols: 3,
       skills: [
         { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
         { name: "Express.js", icon: <SiExpress className="text-white" /> },
@@ -95,8 +95,8 @@ const MobSkills = () => {
         viewport={{ once: true }}
         className="flex items-center gap-3 mb-10"
       >
-        <BadgeCheck className="text-green-400 w-8 h-8" />
-        <h2 className="text-3xl font-bold text-white">Skills</h2>
+        <BadgeCheck className="text-green-400 w-10 h-10" />
+        <h2 className="text-4xl font-bold text-white">Skills</h2>
       </motion.div>
 
       <div className="flex flex-col gap-12 w-full max-w-md">
@@ -109,12 +109,8 @@ const MobSkills = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <GlassCard
-              className="p-6 flex flex-col items-center gap-5 text-center
-              bg-white/5 hover:bg-white/10 transition-all duration-300
-              hover:shadow-[0_0_15px_rgba(0,255,255,0.1)] rounded-2xl"
-            >
-              <h3 className="text-xl text-white font-semibold border-b border-white/10 pb-2 flex items-center gap-2">
+            <GlassCard className="p-6 flex flex-col items-center gap-5 text-center bg-white/5 rounded-3xl border border-white/20">
+              <h3 className="text-xl text-white font-semibold pb-2 flex items-center gap-2">
                 {card.icon}
                 {card.title}
               </h3>
@@ -136,7 +132,7 @@ const MobSkills = () => {
                     whileHover={{ scale: 1.15 }}
                     className="group flex flex-col items-center transition-all"
                   >
-                    <div className="rounded-2xl p-3 bg-white/5 hover:bg-white/10 transition-all duration-300 shadow-md">
+                    <div className="rounded-2xl p-3 bg-white/5 shadow-md">
                       <div className="text-2xl">{skill.icon}</div>
                     </div>
                     <p className="mt-2 text-white text-sm font-medium">

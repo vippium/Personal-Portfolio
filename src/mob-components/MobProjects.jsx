@@ -52,7 +52,7 @@ const ProjectsSection = () => {
   return (
     <section
       id="m-projects"
-      className="min-h-screen px-6 md:px-20 py-20 flex flex-col items-center justify-center relative"
+      className="px-6 md:px-20 py-20 flex flex-col items-center justify-center relative"
     >
       {/* Section Heading */}
       <motion.div
@@ -73,7 +73,7 @@ const ProjectsSection = () => {
             key={i}
             className="snap-center shrink-0 w-[90%] sm:w-[400px] max-w-[400px]"
           >
-            <GlassCard className="p-4 md:p-6 flex flex-col gap-4 h-[450px] bg-white/5 hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,255,255,0.15)]">
+            <GlassCard className="p-4 md:p-6 flex flex-col gap-4 h-[500px] bg-white/5 border border-white/20">
               {/* Coming Soon Card */}
               {project.comingSoon ? (
                 <div className="flex flex-col items-center justify-center text-center text-white/80 space-y-3 h-full py-12">
@@ -90,36 +90,29 @@ const ProjectsSection = () => {
                       className="w-full h-40 object-cover rounded-2xl mb-1"
                     />
                   ) : (
-                    <div className="w-full h-40 bg-white/5 rounded-2xl flex items-center justify-center text-white/30 text-xl">
+                    <div className="w-full h-40 bg-white/5 rounded-2xl flex items-center justify-center text-white/60 text-xl">
                       <Clock className="w-6 h-6 mr-2" />
                       {project.status?.trim() || "In Progress"}
                     </div>
                   )}
 
                   {/* Project Title */}
-                  <h3 className="text-lg font-semibold text-center text-white">
+                  <h3 className="text-2xl font-semibold text-center text-white">
                     {project.name}
                   </h3>
 
                   {/* Description */}
                   {project.description && (
-                    <p className="text-white/80 text-sm leading-relaxed text-center">
+                    <p className="text-white/80 text-base leading-relaxed text-center">
                       {project.description}
                     </p>
                   )}
 
-                  {/* Tech Stack */}
-                  {project.techStack && project.techStack.length > 0 && (
-                    <div className="flex flex-wrap justify-center gap-2 mt-2">
-                      {project.techStack.map((tech, idx) => (
-                        <span
-                          key={idx}
-                          className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/70 border border-white/10"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                  {/* Coming Soon Badge (based on techStack) */}
+                  {project.techStack?.includes("Coming Soon") && (
+                    <span className="text-xs px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-300 font-medium self-center mt-1">
+                      Coming Soon
+                    </span>
                   )}
 
                   {/* Links & Status */}
@@ -150,7 +143,18 @@ const ProjectsSection = () => {
                     {/* Status badge */}
                     {typeof project.status === "string" &&
                       project.status.trim() !== "" && (
-                        <span className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/60 whitespace-nowrap">
+                        <span
+                          className={`
+        text-xs px-3 py-1 rounded-full font-medium whitespace-nowrap
+        ${
+          project.status === "Completed"
+            ? "bg-green-500/20 text-green-400"
+            : project.status === "In Progress"
+            ? "bg-orange-500/20 text-orange-400"
+            : "bg-blue-500/20 text-blue-400"
+        }
+      `}
+                        >
                           {project.status}
                         </span>
                       )}
