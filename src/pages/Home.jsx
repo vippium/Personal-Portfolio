@@ -2,7 +2,7 @@ import React from "react";
 import { Download } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import ProfileImage from "../assets/image.png"; // Replace with your actual image
+import ProfileImage from "../assets/personal_image.png"; // Replace with your actual image
 
 const Home = () => {
   return (
@@ -22,11 +22,11 @@ const Home = () => {
           Hi, I'm{" "}
           <TypeAnimation
             sequence={[
-              "Vipin Prajapat",
+              "Vipin Prajapat ",
               2500,
-              "Frontend Dev",
+              "Frontend Dev ",
               2500,
-              "UI Designer",
+              "UI Designer ",
               2500,
             ]}
             speed={50}
@@ -56,7 +56,7 @@ const Home = () => {
           className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300"
         >
           <Download size={20} />
-          Resume
+          My Resume
         </motion.a>
       </motion.div>
 
