@@ -73,12 +73,12 @@ const ProjectsSection = () => {
         viewport={{ once: true }}
         className="flex items-center gap-4 mb-12"
       >
-        <LayoutTemplate className="text-sky-400 w-10 h-10" />
-        <h2 className="text-4xl md:text-5xl font-bold text-white">Projects</h2>
+        <LayoutTemplate className="text-sky-400 w-9 h-9" />
+        <h2 className="text-4xl font-bold text-white">Projects</h2>
       </motion.div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
         {projects.map((project, i) => (
           <motion.div
             key={i}
@@ -117,7 +117,7 @@ const ProjectsSection = () => {
 
               {/* Tech Stack */}
               {project.techStack.length > 0 && (
-                <div className="flex flex-wrap gap-2 mt-2">
+                <div className="flex flex-wrap gap-2 mt-2 justify-center">
                   {project.techStack.map((tech, idx) => (
                     <span
                       key={idx}
@@ -129,7 +129,7 @@ const ProjectsSection = () => {
                 </div>
               )}
 
-              {/* Links + Status */}
+              {/* Links */}
               <div className="flex items-center gap-4 mt-auto pt-4">
                 {project.github && (
                   <a
@@ -151,9 +151,23 @@ const ProjectsSection = () => {
                     <ExternalLink className="w-5 h-5" />
                   </a>
                 )}
-                <span className="text-xs ml-auto px-3 py-1 rounded-full bg-white/10 text-white/60">
-                  {project.status}
-                </span>
+                {/* Status Badge */}
+                {typeof project.status === "string" &&
+                  project.status.trim() !== "" && (
+                    <span
+                      className={`text-xs ml-auto px-3 py-1 rounded-full font-medium whitespace-nowrap
+      ${
+        project.status === "Completed"
+          ? "bg-green-500/20 text-green-400"
+          : project.status === "In Progress"
+          ? "bg-orange-500/20 text-orange-400"
+          : "bg-blue-500/20 text-blue-400"
+      }
+    `}
+                    >
+                      {project.status}
+                    </span>
+                  )}
               </div>
             </GlassCard>
           </motion.div>
