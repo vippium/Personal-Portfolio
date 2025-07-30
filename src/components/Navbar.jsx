@@ -11,7 +11,7 @@ const Navbar = () => {
     { id: "experience", offset: -60 },
     { id: "education", offset: -80 },
     { id: "skills", offset: -50 },
-    { id: "projects", offset: -45 },
+    { id: "projects", offset: -17 },
     { id: "contact", offset: -100 },
   ];
 
