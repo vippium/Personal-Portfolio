@@ -3,7 +3,7 @@ import { Github, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-20 bg-white/5 border-t border-white/10 backdrop-blur-xl">
+    <footer className="w-full mt-5 bg-white/5 border-t border-white/10 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 py-10 md:py-6 flex flex-col items-center gap-6">
         {/* Social Icons */}
         <div className="flex gap-8">
