@@ -19,16 +19,14 @@ const About = () => {
       >
         {/* Section Title */}
         <div className="flex items-center gap-4 mb-10">
-          <UserRound className="text-blue-400 w-10 h-10" />
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            About Me
-          </h2>
+          <UserRound className="text-blue-400 w-9 h-9" />
+          <h2 className="text-4xl font-bold text-white">About Me</h2>
         </div>
 
         {/* GlassCard */}
         <GlassCard
           className="p-6 md:p-10 bg-white/5 hover:bg-white/10 transition-all duration-300 
-          rounded-2xl text-white shadow-md hover:shadow-[0_0_15px_rgba(0,255,255,0.1)]"
+          rounded-3xl text-white shadow-md hover:shadow-[0_0_15px_rgba(0,255,255,0.1)]"
         >
           <p className="text-lg md:text-xl leading-relaxed text-center text-white/90">
             I’m a{" "}
