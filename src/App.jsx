@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Experience from "./pages/Experience";
+import EducationSection from "./pages/Education";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
@@ -20,17 +22,19 @@ import MobContact from "./mob-components/MobContact";
 // Layout and Loader
 import Layout from "./components/Layout";
 import Loader from "./components/Loader";
+import ClickParticles from "./components/ClickParticles";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setLoading(false), 1725); // Adjust if needed
+    const timeout = setTimeout(() => setLoading(false), 1725);
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <Layout>
+      <ClickParticles />
       {loading && <Loader />}
 
       {!loading && (
@@ -57,6 +61,14 @@ const App = () => {
             </div>
             <div className="block md:hidden">
               <MobAbout />
+            </div>
+
+            <div className="hidden md:block">
+              <Experience />
+            </div>
+
+            <div className="hidden md:block">
+              <EducationSection />
             </div>
 
             <div className="hidden md:block">
