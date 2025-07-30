@@ -5,7 +5,16 @@ import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
 
 const Navbar = () => {
-  const navItems = ["home", "about", "skills", "projects", "contact"];
+  const navItems = [
+    { id: "home", offset: -150 },
+    { id: "about", offset: -120 },
+    { id: "experience", offset: -60 },
+    { id: "education", offset: -80 },
+    { id: "skills", offset: -50 },
+    { id: "projects", offset: -45 },
+    { id: "contact", offset: -100 },
+  ];
+
   const [activeSection, setActiveSection] = useState("home");
 
   const { scrollYProgress } = useScroll();
@@ -17,8 +26,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      navItems.forEach((id) => {
+      navItems.forEach(({ id }) => {
         const el = document.getElementById(id);
+
         if (!el) return;
 
         const rect = el.getBoundingClientRect();
@@ -56,18 +66,18 @@ const Navbar = () => {
             {navItems.map((item) => (
               <li key={item} className="relative">
                 <Link
-                  to={item}
+                  to={item.id}
                   smooth={true}
                   spy={true}
-                  offset={-80}
+                  offset={item.offset}
                   duration={500}
                   className={`text-white text-lg font-medium transition-colors duration-300 cursor-pointer ${
-                    activeSection === item
+                    activeSection === item.id
                       ? "text-blue-400"
                       : "hover:text-blue-400"
                   }`}
                 >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                  {item.id.charAt(0).toUpperCase() + item.id.slice(1)}
 
                   {/* AnimatePresence underline effect */}
                   <AnimatePresence mode="wait">
