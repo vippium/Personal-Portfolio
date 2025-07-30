@@ -11,7 +11,7 @@ const Footer = () => {
             href="https://github.com/vippium/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 transition duration-300"
+            className="text-white hover:text-gray-400 transition duration-300"
           >
             <Github size={26} />
           </a>
