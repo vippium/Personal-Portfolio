@@ -85,8 +85,8 @@ const ContactSection = () => {
         viewport={{ once: true }}
         className="flex items-center gap-4 mb-10"
       >
-        <SendHorizontal className="text-emerald-400 w-8 h-8" />
-        <h2 className="text-4xl md:text-5xl font-bold text-white">
+        <SendHorizontal className="text-emerald-400 w-9 h-9" />
+        <h2 className="text-4xl md:text-4xl font-bold text-white">
           Get in Touch
         </h2>
       </motion.div>
@@ -99,7 +99,7 @@ const ContactSection = () => {
         transition={{ duration: 0.7 }}
         className="w-full max-w-xl"
       >
-        <GlassCard className="p-6 md:p-10 bg-white/5 hover:bg-white/10 backdrop-blur-md rounded-2xl transition-all duration-300 shadow-lg">
+        <GlassCard className="md:p-10 bg-white/5 hover:bg-white/10 backdrop-blur-md rounded-3xl transition-all duration-300 shadow-lg">
           {submitted ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -135,7 +135,7 @@ const ContactSection = () => {
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="w-full pl-12 pr-4 py-2 rounded-lg bg-white/5 text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400/50 backdrop-blur placeholder-white/30"
+                  className="w-full pl-12 pr-4 py-2 rounded-full bg-white/5 text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400/50 backdrop-blur placeholder-white/30"
                   value={formData.name}
                   onChange={handleChange}
                 />
@@ -148,7 +148,7 @@ const ContactSection = () => {
                   name="email"
                   placeholder="Your Email"
                   required
-                  className="w-full pl-12 pr-4 py-2 rounded-lg bg-white/5 text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400/50 backdrop-blur placeholder-white/30"
+                  className="w-full pl-12 pr-4 py-2 rounded-full bg-white/5 text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400/50 backdrop-blur placeholder-white/30"
                   value={formData.email}
                   onChange={handleChange}
                 />
@@ -161,7 +161,7 @@ const ContactSection = () => {
                   placeholder="Your Message"
                   required
                   rows={4}
-                  className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/5 text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400/50 backdrop-blur placeholder-white/30 resize-none"
+                  className="w-full pl-12 pr-4 py-3 rounded-3xl bg-white/5 text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400/50 backdrop-blur placeholder-white/30 resize-none"
                   value={formData.message}
                   onChange={handleChange}
                 />
@@ -173,7 +173,7 @@ const ContactSection = () => {
                 className={`w-fit mx-auto flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                   isSubmitting
                     ? "bg-sky-700 cursor-not-allowed"
-                    : "bg-sky-500 hover:bg-sky-600"
+                    : "bg-sky-700 hover:bg-sky-600"
                 } text-white`}
               >
                 {isSubmitting ? (
