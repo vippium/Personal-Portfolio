@@ -52,7 +52,7 @@ const MobExperience = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
-            className="bg-white/5 border border-white/10 rounded-3xl p-5 shadow-md"
+            className="bg-white/5 border border-white/25 rounded-3xl p-5 shadow-md"
           >
             {/* Top Row: Logo + Text */}
             <div className="flex items-center gap-4 mb-4">

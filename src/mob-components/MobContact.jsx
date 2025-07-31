@@ -97,7 +97,7 @@ const MobContactSection = () => {
         transition={{ duration: 0.7 }}
         className="w-full max-w-sm"
       >
-        <GlassCard className="p-8 mx-2 bg-white/5 backdrop-blur rounded-3xl transition-all shadow-md border border-white/20">
+        <GlassCard className="p-8 mx-2 bg-white/5  rounded-3xl transition-all shadow-md border border-white/20">
           {submitted ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
