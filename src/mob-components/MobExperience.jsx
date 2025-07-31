@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Briefcase, CheckCheck, OctagonAlert } from "lucide-react";
 import WisfluxLogo from "../assets/wisflux_logo.png";
 import SkybriskLogo from "../assets/skybrisk.png";
@@ -19,7 +19,7 @@ const experienceData = [
   {
     role: "MERN Stack Development Intern",
     company: "Wisflux Tech Labs",
-    period: "Jan 2025 – Apr 2025",
+    period: "Role closed in Apr 2025",
     description: [
       "Converted Figma designs into responsive MERN components.",
       "Integrated animations using GSAP for interactive UX.",
@@ -31,11 +31,10 @@ const experienceData = [
 ];
 
 const MobExperience = () => {
-  const [visiblePeriodIndex, setVisiblePeriodIndex] = useState(null);
+  const [bounceKey, setBounceKey] = useState(0);
 
-  const handleIconClick = (index) => {
-    setVisiblePeriodIndex(index);
-    setTimeout(() => setVisiblePeriodIndex(null), 3000);
+  const handleIconClick = () => {
+    setBounceKey((prev) => prev + 1);
   };
 
   return (
@@ -64,38 +63,10 @@ const MobExperience = () => {
             className="bg-white/5 border border-white/25 rounded-3xl p-5 shadow-md relative"
           >
             <div className="relative">
-              {/* Status Icon */}
-              <button
-                onClick={() => handleIconClick(i)}
-                className="absolute top-1.5 -right-1"
-                title="View internship period"
-              >
-                {exp.status === "completed" ? (
-                  <CheckCheck className="w-5 h-5 text-green-400" />
-                ) : (
-                  <OctagonAlert className="w-5 h-5 text-yellow-400" />
-                )}
-              </button>
-
-              <AnimatePresence>
-                {visiblePeriodIndex === i && (
-                  <motion.div
-                    key="period-msg"
-                    initial={{ opacity: 0, y: 4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 4 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute -top-9 right-0 bg-white/10 text-white text-xs px-3 py-1 rounded-xl shadow-md z-20"
-                  >
-                    {exp.period}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
               {/* Top Row: Logo + Text */}
               <div className="flex items-center gap-4 mb-4">
                 <img
-                  src={exp.logo || fallbackLogo}
+                  src={exp.logo}
                   alt={exp.company}
                   onError={(e) => {
                     e.currentTarget.onerror = null;
@@ -107,7 +78,9 @@ const MobExperience = () => {
                   <h3 className="text-xl font-semibold text-blue-400">
                     {exp.role}
                   </h3>
-                  <p className="text-base text-white/80">{exp.company}</p>
+                  <div className="flex items-center gap-2 text-base text-white/80">
+                    <span>{exp.company}</span>
+                  </div>
                 </div>
               </div>
 
@@ -117,6 +90,24 @@ const MobExperience = () => {
                   <li key={idx}>{point}</li>
                 ))}
               </ul>
+
+              {/* Separator */}
+              <div className="my-3 h-px w-full bg-gradient-to-r from-white/30 via-white/40 to-white/30" />
+
+              {/* Status Badge */}
+              <div className="mt-3 text-xs text-white/80 flex items-center gap-2">
+                {exp.status === "completed" ? (
+                  <>
+                    <CheckCheck className="w-4 h-4 text-green-400" />
+                    <span>Completed • {exp.period}</span>
+                  </>
+                ) : (
+                  <>
+                    <OctagonAlert className="w-4 h-4 text-yellow-400" />
+                    <span>Ongoing • {exp.period}</span>
+                  </>
+                )}
+              </div>
             </div>
           </motion.div>
         ))}
