@@ -39,7 +39,7 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // trigger once initially
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -64,7 +64,7 @@ const Navbar = () => {
           {/* Nav Links */}
           <ul className="flex space-x-10">
             {navItems.map((item) => (
-              <li key={item} className="relative">
+              <li key={item.id} className="relative">
                 <Link
                   to={item.id}
                   smooth={true}
