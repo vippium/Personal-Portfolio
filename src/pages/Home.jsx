@@ -2,7 +2,7 @@ import React from "react";
 import { Download } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import ProfileImage from "../assets/personal_image.png"; // Replace with your actual image
+import ProfileImage from "../assets/personal_image.png";
 
 const Home = () => {
   return (
