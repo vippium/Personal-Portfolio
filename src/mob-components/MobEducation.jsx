@@ -32,7 +32,7 @@ const MobEducation = () => {
         viewport={{ once: true, amount: 0.6 }}
         className="flex items-center justify-center gap-3 mb-6"
       >
-        <GraduationCap className="text-blue-400 w-10 h-10" />
+        <GraduationCap className="text-indigo-400 w-10 h-10" />
         <h2 className="text-4xl font-bold text-white">Education</h2>
       </motion.div>
 
