@@ -8,7 +8,7 @@ const MobHome = () => {
   return (
     <motion.section
       id="m-home"
-      className="flex flex-col items-center text-center px-6 md:hidden pt-16 pb-5"
+      className="flex flex-col items-center text-center px-6 md:hidden pt-10 pb-5"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
