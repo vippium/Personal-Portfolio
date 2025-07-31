@@ -86,7 +86,7 @@ const MobSkills = () => {
   return (
     <section
       id="m-skills"
-      className="px-6 py-16 flex flex-col items-center md:hidden"
+      className="px-6 py-12 flex flex-col items-center md:hidden"
     >
       <motion.div
         variants={headingVariant}
