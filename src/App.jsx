@@ -15,6 +15,8 @@ import Footer from "./components/Footer";
 import MobNavbar from "./mob-components/MobNavbar";
 import MobHome from "./mob-components/MobHome";
 import MobAbout from "./mob-components/MobAbout";
+import MobExperience from "./mob-components/MobExperience";
+import MobEducation from "./mob-components/MobEducation";
 import MobSkills from "./mob-components/MobSkills";
 import MobProjects from "./mob-components/MobProjects";
 import MobContact from "./mob-components/MobContact";
@@ -22,7 +24,6 @@ import MobContact from "./mob-components/MobContact";
 // Layout and Loader
 import Layout from "./components/Layout";
 import Loader from "./components/Loader";
-import ClickParticles from "./components/ClickParticles";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -34,7 +35,6 @@ const App = () => {
 
   return (
     <Layout>
-      <ClickParticles />
       {loading && <Loader />}
 
       {!loading && (
@@ -66,9 +66,15 @@ const App = () => {
             <div className="hidden md:block">
               <Experience />
             </div>
+            <div className="block md:hidden">
+              <MobExperience />
+            </div>
 
             <div className="hidden md:block">
               <EducationSection />
+            </div>
+            <div className="block md:hidden">
+              <MobEducation />
             </div>
 
             <div className="hidden md:block">
