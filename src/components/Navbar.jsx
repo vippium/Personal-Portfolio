@@ -78,21 +78,22 @@ const Navbar = () => {
                   }`}
                 >
                   {item.id.charAt(0).toUpperCase() + item.id.slice(1)}
-
-                  {/* AnimatePresence underline effect */}
-                  <AnimatePresence mode="wait">
-                    {activeSection === item && (
-                      <motion.div
-                        key="underline"
-                        className="absolute left-0 right-0 -bottom-1 h-[2px] bg-blue-400 rounded-full"
-                        initial={{ opacity: 0, scaleX: 0 }}
-                        animate={{ opacity: 1, scaleX: 1 }}
-                        exit={{ opacity: 0, scaleX: 0 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    )}
-                  </AnimatePresence>
                 </Link>
+
+                {/* Animated underline */}
+                <AnimatePresence mode="wait">
+                  {activeSection === item.id && (
+                    <motion.div
+                      key={item.id}
+                      className="absolute left-0 right-0 -bottom-1 h-[2px] bg-blue-400 rounded-full"
+                      initial={{ opacity: 0, scaleX: 0 }}
+                      animate={{ opacity: 1, scaleX: 1 }}
+                      exit={{ opacity: 0, scaleX: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      style={{ transformOrigin: "center" }}
+                    />
+                  )}
+                </AnimatePresence>
               </li>
             ))}
           </ul>
