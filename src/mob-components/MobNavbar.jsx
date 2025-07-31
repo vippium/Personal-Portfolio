@@ -81,7 +81,7 @@ const MobNavbar = () => {
               backgroundColor: "rgba(255,255,255,0)",
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed top-28 left-0 right-0 mx-auto z-40 px-6 w-full max-w-[75%] rounded-3xl shadow-md border border-white/15 flex flex-col items-center py-4"
+            className="fixed top-28 left-0 right-0 mx-auto z-40 px-6 w-full max-w-[67%] rounded-3xl shadow-md border border-white/15 flex flex-col items-center py-4"
             style={{
               WebkitBackdropFilter: "blur(16px)",
               backdropFilter: "blur(20px)",
