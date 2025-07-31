@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { UserRound } from "lucide-react";
+import { Smile } from "lucide-react";
 import GlassCard from "../components/GlassCard";
 
 const About = () => {
@@ -19,7 +19,7 @@ const About = () => {
       >
         {/* Section Title */}
         <div className="flex items-center gap-4 mb-10">
-          <UserRound className="text-blue-400 w-9 h-9" />
+          <Smile className="text-cyan-400 w-9 h-9" />
           <h2 className="text-4xl font-bold text-white">About Me</h2>
         </div>
 

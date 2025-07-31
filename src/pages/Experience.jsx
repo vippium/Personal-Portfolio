@@ -58,7 +58,7 @@ const ExperienceSection = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex items-center gap-4 mb-8"
       >
-        <Briefcase className="text-blue-400 w-9 h-9" />
+        <Briefcase className="text-purple-400 w-9 h-9" />
         <h2 className="text-4xl md:text-4xl font-bold text-white">
           Work Experience
         </h2>

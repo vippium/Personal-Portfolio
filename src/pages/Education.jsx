@@ -49,7 +49,7 @@ const EducationSection = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex items-center gap-4 mb-8"
       >
-        <GraduationCap className="text-blue-400 w-9 h-9" />
+        <GraduationCap className="text-indigo-400 w-9 h-9" />
         <h2 className="text-4xl md:text-4xl font-bold text-white">Education</h2>
       </motion.div>
 
