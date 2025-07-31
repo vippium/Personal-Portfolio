@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const navItems = [
   { id: "m-home", label: "Home", offset: -250 },
   { id: "m-about", label: "About", offset: -70 },
+  { id: "m-experience", label: "Experience", offset: -150 },
+  { id: "m-education", label: "Education", offset: -120 },
   { id: "m-skills", label: "Skills", offset: -70 },
   { id: "m-projects", label: "Projects", offset: -120 },
   { id: "m-contact", label: "Contact", offset: -10 },
@@ -19,12 +21,12 @@ const MobNavbar = () => {
     <>
       {/* Animated Navbar Container */}
       <motion.nav
-        className="fixed top-5 inset-x-0 z-50 w-[85%] max-w-[320px] mx-auto px-4"
+        className="fixed top-4 inset-x-0 z-50 w-[85%] max-w-[320px] mx-auto px-4"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
           duration: 0.4,
-          ease: "easeOut", // Adjust this to match your MobHome timing
+          ease: "easeOut",
         }}
       >
         <GlassCard className="relative flex items-center justify-center px-6 py-4 rounded-full shadow-md backdrop-blur-lg bg-white/5 border border-white/15">
