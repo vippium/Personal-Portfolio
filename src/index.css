@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @keyframes blink {
 
   0%,
@@ -18,7 +17,6 @@
 .animate-blink {
   animation: blink 1s infinite;
 }
-
 
 .animated-blue {
   color: #60a5fa;
