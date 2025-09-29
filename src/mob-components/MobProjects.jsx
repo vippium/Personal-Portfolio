@@ -21,14 +21,23 @@ const projects = [
     status: "Completed",
   },
   {
+    name: "CRM Software Project",
+    description:
+      "A full-stack web-based CRM to manage leads, customers, tasks, and sales pipelines with secure authentication, role-based access, and a user-friendly dashboard for improved team productivity.",
+    github: "https://github.com/vippium/CRM-Software-Project",
+    live: null,
+    image:
+      "https://www.softwaresuggest.com/blog/wp-content/uploads/2024/04/top-crm-implementation-challenges-steps-to-overcoming-them.jpg",
+    status: "Completed",
+  },
+  {
     name: "ERP Management System",
     description:
-      "A new project is currently brewing in the shadows — something exciting is on its way! Stay tuned as I shape it into life.",
+      "A full-featured ERP system is in the works — streamlining business operations, managing resources efficiently, and enhancing productivity. Stay tuned for the launch !!",
     github: null,
     live: null,
     image: null,
-    status: "",
-    techStack: ["Coming Soon"],
+    status: "Coming Soon",
   },
   {
     name: "Coming Soon",
@@ -52,7 +61,7 @@ const ProjectsSection = () => {
   return (
     <section
       id="m-projects"
-      className="px-6 md:px-20 py-20 flex flex-col items-center justify-center relative"
+      className="px-3 md:px-20 py-20 flex flex-col items-center justify-center relative"
     >
       {/* Section Heading */}
       <motion.div
@@ -67,18 +76,20 @@ const ProjectsSection = () => {
       </motion.div>
 
       {/* Horizontal Scroll Container */}
-      <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory w-full max-w-full px-2 md:px-10">
+      <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory w-full max-w-full px-1 md:px-10">
         {projects.map((project, i) => (
           <div
             key={i}
             className="snap-center shrink-0 w-[90%] sm:w-[400px] max-w-[400px]"
           >
-            <GlassCard className="p-4 md:p-6 flex flex-col gap-4 h-[500px] bg-white/5 border border-white/20">
+            <GlassCard className="p-4 md:p-6 flex flex-col gap-4 h-[450px] bg-white/5 border border-white/20">
               {/* Coming Soon Card */}
               {project.comingSoon ? (
                 <div className="flex flex-col items-center justify-center text-center text-white/80 space-y-3 h-full py-12">
                   <Boxes className="w-16 h-16 text-white/30" />
-                  <p className="text-white/50 text-xl italic">Coming Soon...</p>
+                  <p className="text-white/50 text-xl italic">
+                    Stay Tuned for More...
+                  </p>
                 </div>
               ) : (
                 <>
@@ -97,13 +108,13 @@ const ProjectsSection = () => {
                   )}
 
                   {/* Project Title */}
-                  <h3 className="text-2xl font-semibold text-center text-white">
+                  <h3 className="text-xl font-semibold text-center text-white">
                     {project.name}
                   </h3>
 
                   {/* Description */}
                   {project.description && (
-                    <p className="text-white/80 text-base leading-relaxed text-center">
+                    <p className="text-white/80 text-sm leading-relaxed text-center">
                       {project.description}
                     </p>
                   )}
