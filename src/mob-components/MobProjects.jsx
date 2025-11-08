@@ -23,7 +23,7 @@ const projects = [
   {
     name: "CRM Software Project",
     description:
-      "A full-stack web-based CRM to manage leads, customers, tasks, and sales pipelines with secure authentication, role-based access, and a user-friendly dashboard for improved team productivity.",
+      "A customer relationship management platform that helps businesses track leads, manage customer data, and optimize sales pipelines with real-time analytics and reporting tools.",
     github: "https://github.com/vippium/CRM-Software-Project",
     live: null,
     image:
@@ -33,15 +33,12 @@ const projects = [
   {
     name: "ERP Management System",
     description:
-      "A full-featured ERP system is in the works — streamlining business operations, managing resources efficiently, and enhancing productivity. Stay tuned for the launch !!",
-    github: null,
-    live: null,
-    image: null,
-    status: "Coming Soon",
-  },
-  {
-    name: "Coming Soon",
-    comingSoon: true,
+      "A comprehensive ERP system that integrates core business functions like sales, inventory & more into a single platform, enabling streamlined workflows and data-driven decision-making.",
+    github: "https://github.com/vippium/ERP-Management-System",
+    live: "https://erp-system-vippium.vercel.app/",
+    image:
+      "https://www.softwaresuggest.com/blog/wp-content/uploads/2023/01/benefits-of-erp-advantages-disadvantages.jpg",
+    status: "Completed",
   },
 ];
 

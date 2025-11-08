@@ -20,32 +20,32 @@ const projects = [
     image:
       "https://img.freepik.com/free-vector/smiling-people-standing-line-book-store_74855-14515.jpg",
     status: "Completed",
-    techStack: ["Full Stack", "Tailwind", "Vite", "MongoDB"],
+    techStack: ["Full Stack", "CRUD Operations", "Tailwind"],
   },
   {
     name: "CRM Software Project",
     description:
-      "A full-stack web-based CRM to manage leads, customers, tasks, and sales pipelines with secure authentication, role-based access, & user-friendly dashboard for improved team productivity.",
+      "A customer relationship management platform that helps businesses track leads, manage customer data, and optimize sales pipelines with real-time analytics and reporting tools.",
     github: "https://github.com/vippium/CRM-Software-Project",
     live: null,
     image:
       "https://www.softwaresuggest.com/blog/wp-content/uploads/2024/04/top-crm-implementation-challenges-steps-to-overcoming-them.jpg",
     status: "Completed",
-    techStack: ["Full MERN", "JWT Auth", "Role-based Access"],
+    techStack: ["JWT Auth", "Sales Pipeline", "Lead Management"],
   },
   {
     name: "ERP Management System",
     description:
-      "A full-featured ERP system is in the works — streamlining business operations, managing resources efficiently, and enhancing productivity. Stay tuned for the launch !!",
-    github: null,
-    live: null,
-    image: null,
-    status: "Coming Soon",
-    techStack: [],
+      "A comprehensive ERP system that integrates core business functions like sales, inventory & more into a single platform, enabling streamlined workflows and data-driven decision-making.",
+    github: "https://github.com/vippium/ERP-Management-System",
+    live: "https://erp-system-vippium.vercel.app/",
+    image:
+      "https://www.softwaresuggest.com/blog/wp-content/uploads/2023/01/benefits-of-erp-advantages-disadvantages.jpg",
+    status: "Completed",
+    techStack: ["JWT Auth", "Data Analytics", "Role-based Access"],
   },
 ];
 
-// Animation Variants
 const headingVariant = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -82,8 +82,8 @@ const ProjectsSection = () => {
         <h2 className="text-4xl font-bold text-white">Projects</h2>
       </motion.div>
 
-      {/* Horizontal Scroll Container */}
-      <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory w-full max-w-full px-2 md:px-10">
+      {/* Project Container */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
         {projects.map((project, i) => (
           <motion.div
             key={i}
@@ -123,11 +123,11 @@ const ProjectsSection = () => {
 
               {/* Tech Stack */}
               {project.techStack && project.techStack.length > 0 && (
-                <div className="flex flex-wrap gap-2 mt-2 justify-center">
+                <div className="flex flex-wrap gap-2 mt-1 justify-center">
                   {project.techStack.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/70 border border-white/10"
+                      className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-white/70 border border-white/10"
                     >
                       {tech}
                     </span>
@@ -176,23 +176,6 @@ const ProjectsSection = () => {
             </GlassCard>
           </motion.div>
         ))}
-
-        {/* "Coming Soon" Card */}
-        <motion.div
-          variants={cardVariant}
-          custom={projects.length}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="snap-center flex-shrink-0 w-[350px]"
-        >
-          <GlassCard className="p-6 md:p-10 flex flex-col items-center justify-center text-center text-white/80 bg-white/5 hover:bg-white/10 transition-all duration-300 rounded-2xl h-full space-y-2">
-            <Boxes className="w-20 h-20 text-white/30 mb-2" />
-            <p className="text-white/50 text-xl italic">
-              Stay Tuned for More Projects...
-            </p>
-          </GlassCard>
-        </motion.div>
       </div>
     </section>
   );
