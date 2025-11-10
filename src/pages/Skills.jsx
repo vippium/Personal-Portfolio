@@ -18,6 +18,7 @@ import {
   SiMongodb,
   SiPostman,
   SiNpm,
+  SiSwagger,
 } from "react-icons/si";
 
 // Skill groups
@@ -50,7 +51,7 @@ const skillCards = [
       { name: "GitHub", icon: <SiGithub className="text-white" /> },
       { name: "Postman", icon: <SiPostman className="text-orange-300" /> },
       { name: "NPM", icon: <SiNpm className="text-red-500" /> },
-      { name: "C", icon: <TbBrandCSharp className="text-purple-500" /> },
+      { name: "Swagger", icon: <SiSwagger className="text-green-500" /> },
     ],
   },
 ];
