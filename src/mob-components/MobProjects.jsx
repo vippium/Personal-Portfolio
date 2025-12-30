@@ -33,7 +33,7 @@ const projects = [
   {
     name: "ERP Management System",
     description:
-      "A comprehensive ERP system that integrates core business functions like sales, inventory & more into a single platform, enabling streamlined workflows and data-driven decision-making.",
+      "A comprehensive ERP system that integrates core business functions like sales, inventory & more into a single platform, enabling streamlined workflows.",
     github: "https://github.com/vippium/ERP-Management-System",
     live: "https://erp-system-vippium.vercel.app/",
     image:
@@ -79,7 +79,7 @@ const ProjectsSection = () => {
             key={i}
             className="snap-center shrink-0 w-[90%] sm:w-[400px] max-w-[400px]"
           >
-            <GlassCard className="p-4 md:p-6 flex flex-col gap-4 h-[450px] bg-white/5 border border-white/20">
+            <GlassCard className="p-4 md:p-6 flex flex-col gap-3 h-[400px] bg-white/5 border border-white/20">
               {/* Coming Soon Card */}
               {project.comingSoon ? (
                 <div className="flex flex-col items-center justify-center text-center text-white/80 space-y-3 h-full py-12">

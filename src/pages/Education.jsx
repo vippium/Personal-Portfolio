@@ -10,14 +10,14 @@ const educationData = [
     degree: "Master of Computer Applications",
     institute: "Parul University",
     period: "2023 – 2025",
-    description: ["Expected to graduate in Oct 2025"],
+    description: ["Graduated in Nov 2025"],
     logo: ParulCollege,
   },
   {
     degree: "Bachelor of Computer Applications ",
     institute: "Birla Institute of Technology",
     period: "2020 – 2023",
-    description: ["Graduated with 71.4% (First Class)"],
+    description: ["Graduated with First Class division"],
     logo: BitMesra,
   },
 ];

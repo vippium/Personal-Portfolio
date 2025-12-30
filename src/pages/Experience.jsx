@@ -9,10 +9,10 @@ const experienceData = [
   {
     role: "React.js Development Intern",
     company: "The Skybrisk",
-    period: "Since Jun 2025",
+    period: "Jun 2025 - Dec 2025",
     description: [
-      "Developing responsive UIs using React.js and Tailwind CSS.",
-      "Implementing reusable components to optimize performance.",
+      "Developed responsive UIs using React.js and Tailwind CSS.",
+      "Implemented reusable components to optimize performance.",
     ],
     logo: SkybriskLogo,
   },

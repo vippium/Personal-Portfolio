@@ -20,7 +20,6 @@ const projects = [
     image:
       "https://img.freepik.com/free-vector/smiling-people-standing-line-book-store_74855-14515.jpg",
     status: "Completed",
-    techStack: ["Full Stack", "CRUD Operations", "Tailwind"],
   },
   {
     name: "CRM Software Project",
@@ -31,7 +30,6 @@ const projects = [
     image:
       "https://www.softwaresuggest.com/blog/wp-content/uploads/2024/04/top-crm-implementation-challenges-steps-to-overcoming-them.jpg",
     status: "Completed",
-    techStack: ["JWT Auth", "Sales Pipeline", "Lead Management"],
   },
   {
     name: "ERP Management System",
@@ -42,7 +40,6 @@ const projects = [
     image:
       "https://www.softwaresuggest.com/blog/wp-content/uploads/2023/01/benefits-of-erp-advantages-disadvantages.jpg",
     status: "Completed",
-    techStack: ["JWT Auth", "Data Analytics", "Role-based Access"],
   },
 ];
 

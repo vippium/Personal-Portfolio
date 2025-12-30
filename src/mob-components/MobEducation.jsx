@@ -9,7 +9,7 @@ const educationData = [
     degree: "Master of Computer Applications",
     institute: "Parul University",
     period: "2023 – 2025",
-    description: ["Expected to graduate in Oct 2025"],
+    description: ["Graduated in Nov 2025"],
     logo: ParulLogo,
   },
   {
